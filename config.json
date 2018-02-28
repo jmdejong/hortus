@@ -1,0 +1,44 @@
+{
+    "species": {
+        "poppy": "poppy",
+        "cactus": "cactus",
+        "aloe": "aloe",
+        "venus flytrap": "flytrap",
+        "jade plant": "jadeplant",
+        "fern": "fern",
+        "daffodil": "daffodil",
+        "sunflower": "sunflower",
+        "baobab": "baobab",
+        "lithops": "lithops",
+        "hemp": "hemp",
+        "pansy": "pansy",
+        "iris": "iris",
+        "agave": "agave",
+        "ficus": "ficus",
+        "moss": "moss",
+        "sage": "sage",
+        "snapdragon": "snapdragon",
+        "columbine": "columbine",
+        "brugmansia": "brugmansia",
+        "palm": "palm"
+    },
+    "stages": {
+        "seed": "seed.txt",
+        "seedling": "seedling.txt",
+        "young": "{species}1.txt",
+        "mature": "{species}2.txt",
+        "flowering": "{species}3.txt",
+        "seed-bearing": "{species}2.txt"
+    },
+    "deadart": "rip.txt",
+    
+    "artdirectory": "art/",
+    
+    "userdir": "home",
+    "plantdata": ".botany/{user}_plant_data.json",
+    
+    "plotwidth": 24,
+    "plotheight": 14,
+    "descriptionheight": 4,
+    "plotshor": 6
+}

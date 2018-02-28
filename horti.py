@@ -3,7 +3,7 @@
 import os
 import json
 import sys
-
+from datetime import datetime
 import textwrap
 
 # returns the input string with the specified length by cropping and padding
@@ -66,9 +66,11 @@ class Horti:
         
         # based on archangelic's code for pinhook
         # https://github.com/archangelic/pinhook-tilde/blob/master/plugins/watered.py
-        now = datetime.now()
-        last_watered = datetime.utcfromtimestamp(plant.get('last_watered', now))
-        water_diff = now - last_watered
+        if "last_watered" in data:
+            last_watered = datetime.utcfromtimestamp(data['last_watered'])
+            water_diff = datetime.now() - last_watered
+        else:
+            water_diff = 0
         
         art = self.getArt(data['description'], data.get('is_dead', False) and water_diff.days >= 5)
         

@@ -49,8 +49,11 @@ class Horti:
             
             artFileName = stage.format(species=species)
         
-        with open(os.path.join(self.config['artdirectory'], artFileName)) as artfile:
-            art = artfile.read()
+        try:
+            with open(os.path.join(self.config['artdirectory'], artFileName)) as artfile:
+                art = artfile.read()
+        except OSError:
+            return ""
         
         return art
     
@@ -61,7 +64,7 @@ class Horti:
             except json.decoder.JSONDecodeError:
                 return None
         
-        art = self.getArt(data['description'], data['is_dead'])
+        art = self.getArt(data['description'], data.get('is_dead', False))
         
         width = self.config['plotwidth']
         

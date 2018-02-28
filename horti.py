@@ -64,7 +64,13 @@ class Horti:
             except json.decoder.JSONDecodeError:
                 return None
         
-        art = self.getArt(data['description'], data.get('is_dead', False))
+        # based on archangelic's code for pinhook
+        # https://github.com/archangelic/pinhook-tilde/blob/master/plugins/watered.py
+        now = datetime.now()
+        last_watered = datetime.utcfromtimestamp(plant.get('last_watered', now))
+        water_diff = now - last_watered
+        
+        art = self.getArt(data['description'], data.get('is_dead', False) and water_diff.days >= 5)
         
         width = self.config['plotwidth']
         

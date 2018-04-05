@@ -58,11 +58,14 @@ class Horti:
         return art
     
     def getPlotLinesFromJson(self, filename):
-        with open(filename) as f:
-            try:
-                data = json.load(f)
-            except json.decoder.JSONDecodeError:
-                return None
+        try:
+            with open(filename) as f:
+                try:
+                    data = json.load(f)
+                except json.decoder.JSONDecodeError:
+                    return None
+        except OSError:
+            return None
         
         # based on archangelic's code for pinhook
         # https://github.com/archangelic/pinhook-tilde/blob/master/plugins/watered.py

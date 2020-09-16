@@ -36,6 +36,7 @@
     
     "userdir": "home",
     "plantdata": ".botany/{user}_plant_data.json",
+    "visitordata": ".botany/visitors.json",
     
     "plotwidth": 24,
     "plotheight": 14,

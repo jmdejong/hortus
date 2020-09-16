@@ -148,6 +148,8 @@ class Horti:
     def loadPlantData(self):
         allData = []
         for user in os.listdir(self.config['userdir']):
+            if user in self.config["banned"]:
+                continue
             plantData = self.getPlotLinesFromJson(user)
             if plantData:
                 allData.append(plantData)

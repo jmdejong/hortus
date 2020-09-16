@@ -41,5 +41,6 @@
     "plotwidth": 24,
     "plotheight": 14,
     "descriptionheight": 4,
-    "plotshor": 6
+    "plotshor": 6,
+    "banned": ["jan6"]
 }

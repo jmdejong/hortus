@@ -20,7 +20,8 @@
         "snapdragon": "snapdragon",
         "columbine": "columbine",
         "brugmansia": "brugmansia",
-        "palm": "palm"
+        "palm": "palm",
+        "pachypodium": "pachypodium"
     },
     "stages": {
         "seed": "seed.txt",

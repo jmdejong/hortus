@@ -135,7 +135,15 @@ class Horti:
             line = setStrLen(line, width)
             plotlines.append(line)
         
-        plotlines.append(setStrLen(data['owner'], width))
+        name = data['owner']
+        if is_dead:
+            name = "+{}+".format(name)
+        elif time_delta_watered > (4 * (24 * 3600)):
+            name = "!{}!".format(name)
+        elif time_delta_watered < (1 * (24 * 3600)):
+            name = "~{}~".format(name)
+        
+        plotlines.append(setStrLen(name, width))
         
         descriptionlines = textwrap.wrap(data['description'], width)
         for i in range(self.config['descriptionheight']-1):
